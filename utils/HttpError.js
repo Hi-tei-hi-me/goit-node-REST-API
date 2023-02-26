@@ -1,5 +1,5 @@
-const HttpError = (status, msg) => {
-  const err = new Error(msg);
+const HttpError = (status, message) => {
+  const err = new Error(message);
   err.status = status;
   return err;
 };
