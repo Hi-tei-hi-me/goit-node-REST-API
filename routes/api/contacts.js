@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const contactsActions = require("../../models/contacts");
+const { HttpError } = require("../../utils");
 
 router.get("/", async (req, res, next) => {
   const allContacts = await contactsActions.listContacts();
