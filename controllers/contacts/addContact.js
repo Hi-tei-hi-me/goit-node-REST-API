@@ -1,7 +1,7 @@
 const contactsActions = require("../../models/contacts");
 
 const addContact = async (req, res) => {
-  const addedContact = await contactsActions.addContact({ name, email, phone });
+  const addedContact = await contactsActions.addContact(req.body);
   res.json({
     status: "success",
     code: 201,
