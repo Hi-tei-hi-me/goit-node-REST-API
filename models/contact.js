@@ -22,7 +22,9 @@ const contactSchema = new Schema(
   { versionKey: false, timestamps: true }
 );
 
-const joiAddSchema = Joi.object({
+const Contact = model("contact", contactSchema);
+
+const joiContactSchema = Joi.object({
   name: Joi.string()
     .min(3)
     .max(25)
@@ -45,10 +47,8 @@ const joiUpdateSchema = Joi.object({
 contactSchema.post("save", handleSchemaValidationErrors);
 
 const schema = {
-  joiAddSchema,
+  joiContactSchema,
   joiUpdateSchema,
 };
-
-const Contact = model("contact", contactSchema);
 
 module.exports = { Contact, schema };
