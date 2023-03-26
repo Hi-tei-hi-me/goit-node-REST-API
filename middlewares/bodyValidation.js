@@ -1,8 +1,8 @@
 const { HttpError } = require("../utils");
 
-const bodyValidation = (contactSchema) => {
+const bodyValidation = (schema, message) => {
   return (req, res, next) => {
-    const { error } = contactSchema.validate(req.body);
+    const { error } = schema.validate(req.body);
     if (error) {
       next(HttpError(400, error.message));
     }

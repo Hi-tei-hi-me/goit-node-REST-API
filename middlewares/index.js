@@ -1,3 +1,4 @@
 const bodyValidation = require("./bodyValidation");
+const idValidation = require("./idValidation");
 
-module.exports = { bodyValidation };
+module.exports = { bodyValidation, idValidation };
