@@ -12,9 +12,9 @@ const userSchema = new Schema(
     },
     email: {
       type: String,
-      match: emailRegexp,
+      match: emailPattern,
       unique: true,
-      required: [true, "Email is required"],
+      required: [true, "E-mail is required"],
     },
     subscription: {
       type: String,
