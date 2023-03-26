@@ -14,7 +14,7 @@ const updateContactStatus = async (req, res) => {
     status: "success",
     code: 200,
     data: {
-      result,
+      contactStatus,
     },
   });
 };
