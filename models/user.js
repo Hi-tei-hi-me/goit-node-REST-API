@@ -1,20 +1,24 @@
 const { Schema, model } = require("mongoose");
 const Joi = require("joi");
+
 const { handleSchemaValidationErrors } = require("../utils");
 
 const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 const userSchema = new Schema(
   {
-    password: {
-      type: String,
-      required: [true, "Password is required"],
-    },
     email: {
       type: String,
       match: emailPattern,
       unique: true,
       required: [true, "E-mail is required"],
+    },
+    password: {
+      type: String,
+      required: [true, "Password is required"],
+    },
+    avatarURL: {
+      type: String,
     },
     subscription: {
       type: String,
