@@ -5,7 +5,6 @@ const updateContactStatus = async (req, res) => {
   const contactStatus = await Contact.findByIdAndUpdate(contactId, req.body, {
     new: true,
   });
-
   if (!contactStatus) {
     const error = new Error("Not found");
     error.status = 404;
@@ -15,7 +14,7 @@ const updateContactStatus = async (req, res) => {
     status: "success",
     code: 200,
     data: {
-      result,
+      contactStatus,
     },
   });
 };
