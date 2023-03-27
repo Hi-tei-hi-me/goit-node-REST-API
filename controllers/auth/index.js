@@ -4,7 +4,9 @@ const signInUser = require("./signInUser");
 const getCurrentUser = require("./getCurrentUser");
 const logOutUser = require("./logOutUser");
 const updateUserSubscription = require("./updateUserSubscription");
-const updateAvatar = require("./updateAvatar");
+const updateUserAvatar = require("./updateUserAvatar");
+const verifyUserEmail = require("./verifyUserEmail");
+const resendUserEmailVerification = require("./resendUserEmailVerification");
 
 module.exports = {
   signUpUser: ctrlWrapper(signUpUser),
@@ -12,5 +14,7 @@ module.exports = {
   getCurrentUser: ctrlWrapper(getCurrentUser),
   logOutUser: ctrlWrapper(logOutUser),
   updateUserSubscription: ctrlWrapper(updateUserSubscription),
-  updateAvatar: ctrlWrapper(updateAvatar),
+  updateUserAvatar: ctrlWrapper(updateUserAvatar),
+  verifyUserEmail: ctrlWrapper(verifyUserEmail),
+  resendUserEmailVerification: ctrlWrapper(resendUserEmailVerification),
 };
